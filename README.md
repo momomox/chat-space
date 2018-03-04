@@ -12,7 +12,7 @@
 - has_many :members
 - has_many :groups, through: :members
 
-## groupテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -23,7 +23,7 @@
 - has_many :members
 - has_many :users, through: :members
 
-## messageテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
