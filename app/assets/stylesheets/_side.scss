@@ -1,0 +1,41 @@
+.contents {
+	height: 100%;
+	&__side-contents {
+		width: 300px;
+		height: 100%;
+		min-height: 100%;
+		float: left;
+		box-sizing: border-box;
+		@include clearfix();
+		&__top {
+			height: 100px;
+			background-color: $left-top-color;
+			h2 {
+				color: white;
+				padding: 35px 20px 0px;
+			}
+		}
+		&__bottom {
+			height: calc(100% - 100px);
+			background-color: $left-bottom-color;
+			li {
+				padding: 20px;
+				position: relative;
+				width: 100%;
+				a {
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+				}
+				p {
+					padding-top: 5px;
+					font-size: 11px;
+					color: $right-top-color;
+				}
+			}
+		}
+	}
+}
