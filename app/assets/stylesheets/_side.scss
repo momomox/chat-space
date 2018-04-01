@@ -32,18 +32,12 @@
 		&__bottom {
 			height: calc(100% - 100px);
 			background-color: $side-bottom-color;
-			li {
+			a {
+					text-decoration: none;
+				}
+			&__group {
 				padding: 20px;
 				position: relative;
-				width: 100%;
-				a {
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					height: 100%;
-					width: 100%;
-				}
 				p {
 					padding-top: 5px;
 					font-size: 11px;
