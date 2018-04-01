@@ -1,0 +1,16 @@
+$left-top-color: #253141;
+$left-bottom-color: #2f3e51;
+$header-color: #38AEF0;
+$border-color: #eeeeee;
+$right-top-color: #FFFFFF;
+$right-middle-color: #EEEEEE;
+$right-bottom-color: #CCCCCC;
+$message-color: #434A54;
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
