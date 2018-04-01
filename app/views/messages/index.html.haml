@@ -1,30 +1,29 @@
-.contents
-	= render 'shared/side_bar'
-	.contents__main-contents
-		.contents__main-contents__top
-			.contents__main-contents__top__info
-				%h1 sampleグループ
-				%ul Member:
-				%li Tanaka
-				%li Sato
-			.button.edit_button
-				= link_to "Edit", "#"
-		.contents__main-contents__middle
-			%ul.contents__main-contents__middle__message
-				%li
-					%h2 name
-					%h4 yy/mm/dd hh:mm:ss
-					%p message
-				%li
-					%h2 name
-					%h4 yy/mm/dd hh:mm:ss
-					%p message
-		.contents__main-contents__bottom
-			.contents__main-contents__bottom__form
-				%form{:action => "/", :method => "post"}
-					%input{:type => "text", :placeholder => "type a message"}
-					.icon
-						%label
-							%input{:type => "file", :style => "display:none"}
-							%i.fa.fa-image.fa-fw
-			%input.button.send_button{:type => "submit", :value => "Send"}
+= render 'shared/side_bar'
+.main-contents
+	.main-contents__top
+		.main-contents__top__info
+			%h1 sampleグループ
+			%ul Member:
+			%li Tanaka
+			%li Sato
+		.button.edit_button
+			= link_to "Edit", "#"
+	.main-contents__middle
+		%ul.main-contents__middle__message
+			%li
+				%h2 name
+				%h4 yy/mm/dd hh:mm:ss
+				%p message
+			%li
+				%h2 name
+				%h4 yy/mm/dd hh:mm:ss
+				%p message
+	.main-contents__bottom
+		.main-contents__bottom__form
+			%form{:action => "/", :method => "post"}
+				%input{:type => "text", :placeholder => "type a message"}
+				.icon
+					%label
+						%input{:type => "file", :style => "display:none"}
+						%i.fa.fa-image.fa-fw
+		%input.button.send_button{:type => "submit", :value => "Send"}
