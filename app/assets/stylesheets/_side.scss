@@ -9,15 +9,29 @@
 		@include clearfix();
 		&__top {
 			height: 100px;
-			background-color: $left-top-color;
-			h2 {
-				color: white;
-				padding: 35px 20px 0px;
+			background-color: $side-top-color;
+			&__name {
+				width: 200px;
+				float: left;
+				h2 {
+					color: $white;
+					padding: 35px 0px 0px 20px;
+				}
+			}
+			&__lists {
+				padding: 35px 20px 0px 0px;
+				float: right;
+				.icon {
+					color: $white;
+				}
+				ul,li {
+					display: inline-block;
+				}
 			}
 		}
 		&__bottom {
 			height: calc(100% - 100px);
-			background-color: $left-bottom-color;
+			background-color: $side-bottom-color;
 			li {
 				padding: 20px;
 				position: relative;
@@ -33,7 +47,7 @@
 				p {
 					padding-top: 5px;
 					font-size: 11px;
-					color: $right-top-color;
+					color: $white;
 				}
 			}
 		}
