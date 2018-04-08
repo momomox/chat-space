@@ -19,11 +19,10 @@
 				%h4 yy/mm/dd hh:mm:ss
 				%p message
 	.main-contents__bottom
-		.main-contents__bottom__form
-			%form{:action => "/", :method => "post"}
-				%input{:type => "text", :placeholder => "type a message"}
-				.icon
-					%label
-						%input{:type => "file", :style => "display:none"}
-						%i.fa.fa-image.fa-fw
-		%input.button.send_button{:type => "submit", :value => "Send"}
+		= form_for [@group, @message] do |f|
+			= f.text_field :content, class: 'main-contents__bottom__form', placeholder: 'type a message'
+			.icon
+				= f.label :image, class: 'form__mask__image' do
+					= fa_icon 'picture-o', class: 'fa-fw'
+					= f.file_field :image, class: 'hidden'
+			= f.submit 'Send', class: 'button', class: 'send_button'

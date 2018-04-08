@@ -46,21 +46,23 @@
 		background-color: $main-bottom-color;
 		&__form {
 			background-color: $white;
-			width: calc(100% - 110px);
+			width: calc(100% - 150px);
 			height: 50px;
 			float: left;
-			input[type = "text"] {
-				padding-left: 10px;
-				width: calc(100% - 40px);
-				height: 50px;
-				border: 0;
-				box-sizing: border-box;
+			padding-left: 10px;
+			border: 0;
+			box-sizing: border-box;
+		}
+		.icon {
+			line-height: 50px;
+			padding-right: 10px;
+			display: inline-block;
+			background-color: $white;
+			float: left;
+			.hidden {
+				display: none;
 			}
-			.icon {
-				line-height: 50px;
-				padding-right: 10px;
-				display: inline-block;
-			}
+
 		}
 	}
 }
