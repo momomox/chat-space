@@ -1,0 +1,8 @@
+%li
+	%h2 
+		= message.user.name
+	%h4 
+		= message.created_at
+	%p 
+		= message.content
+	= image_tag message.image.url if message.image.present?
