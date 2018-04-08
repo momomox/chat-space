@@ -10,14 +10,7 @@
 			= link_to "Edit", "#"
 	.main-contents__middle
 		%ul.main-contents__middle__message
-			%li
-				%h2 name
-				%h4 yy/mm/dd hh:mm:ss
-				%p message
-			%li
-				%h2 name
-				%h4 yy/mm/dd hh:mm:ss
-				%p message
+			= render @messages
 	.main-contents__bottom
 		= form_for [@group, @message] do |f|
 			= f.text_field :content, class: 'main-contents__bottom__form', placeholder: 'type a message'
