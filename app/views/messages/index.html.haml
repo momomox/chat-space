@@ -12,7 +12,7 @@
 		%ul.main-contents__middle__message
 			= render @messages
 	.main-contents__bottom
-		= form_for [@group, @message] do |f|
+		= form_for [@group, @message], html: {id: 'new_comment'} do |f|
 			= f.text_field :content, class: 'main-contents__bottom__form', placeholder: 'type a message'
 			.icon
 				= f.label :image, class: 'form__mask__image' do
