@@ -20,6 +20,8 @@
 	}
 	&__middle {
 		height: calc(100% - 190px);
+		width: 100%;
+		overflow: scroll;
 		background-color: $main-middle-color;
 		&__message {
 			padding: 46px 0px 0px 40px;

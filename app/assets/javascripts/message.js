@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function(){
 	  $('#new_message').on('submit', function(e){
 	    e.preventDefault();
 	    var formData = new FormData(this);
-	    var url = $(this).attr('action')
+	    var url = $(this).attr('action');
 	    $.ajax({
 	      url: url,
 	      type: "POST",
@@ -25,7 +25,9 @@ $(document).on('turbolinks:load', function(){
 	   .done(function(data){
 	   	 var html = buildHTML(data);
 	   	 $('.main-contents__middle__message').append(html)
-	   	 $('#form').val('')
+	   	 $('#new_message')[0].reset();
+         $('.main-contents__middle').animate({scrollTop: $('.main-contents__middle')[0].scrollHeight}, 'swing');
+         $('.send_button').prop("disabled", false);
 	   })
 	   .fail(function(){
 	   	 alert('error');
@@ -33,3 +35,5 @@ $(document).on('turbolinks:load', function(){
 	  })
 	})
 })
+
+
