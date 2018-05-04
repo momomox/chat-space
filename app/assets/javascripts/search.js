@@ -26,29 +26,32 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     var input = $(this).val();
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json'
-    })
+    if (input != ""){
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input },
+        dataType: 'json'
+      })
 
-    .done(function(users) {
-     search_list.empty();
-     if (input == "");
-     else if (users.length !== 0) {
-       users.forEach(function(user){
-         console.log(user);
-         appendUser(user);
-       });
-     }
-     else {
-       appendNoUser("一致するユーザーはありません");
-     }
-    })
-    .fail(function(){
-      alert('ユーザー検索に失敗しました');
-    })
+      .done(function(users) {
+       search_list.empty();
+       if (users.length !== 0) {
+         users.forEach(function(user){
+           appendUser(user);
+         });
+       }
+       else {
+         appendNoUser("一致するユーザーはありません");
+       }
+      })
+      .fail(function(){
+        alert('ユーザー検索に失敗しました');
+      })
+    }
+    else {
+      search_list.empty();
+    }
   });
   search_list.on('click', '.user-search-add', function() {
      $('#user-search-field').val('');

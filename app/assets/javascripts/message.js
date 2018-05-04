@@ -3,12 +3,12 @@ $(document).on('turbolinks:load', function(){
 	  function buildHTML(message){
 	  	message.image ? image = `<img src=${message.image}>` : image = "";
 	  	var html = `<li>
-		  				<h2>${message.user_name}</h2>
-						<h4>${message.date}</h4>
-						<p>${message.content}</p>
-						${image}
-					</li>`
-		return html;
+		  						<h2>${message.user_name}</h2>
+									<h4>${message.date}</h4>
+									<p>${message.content}</p>
+									${image}
+									</li>`
+			return html;
 	  }
 	  $('#new_message').on('submit', function(e){
 	    e.preventDefault();
