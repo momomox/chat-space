@@ -7,7 +7,7 @@
 			%li Tanaka
 			%li Sato
 		.button.edit_button
-			= link_to "Edit", "#"
+			= link_to "Edit", edit_group_path(params[:group_id])
 	.main-contents__middle
 		%ul.main-contents__middle__message
 			= render @messages
