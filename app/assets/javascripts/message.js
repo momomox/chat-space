@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
 	$(function(){
 	  function buildHTML(message){
 	  	message.image ? image = `<img src=${message.image}>` : image = "";
-	  	var html = `<li>
+	  	var html = `<li class="message" msg-id = "${message.id}">
 		  						<h2>${message.user_name}</h2>
 									<h4>${message.date}</h4>
 									<p>${message.content}</p>
@@ -26,12 +26,32 @@ $(document).on('turbolinks:load', function(){
 	   	 var html = buildHTML(data);
 	   	 $('.main-contents__middle__message').append(html)
 	   	 $('#new_message')[0].reset();
-         $('.main-contents__middle').animate({scrollTop: $('.main-contents__middle')[0].scrollHeight}, 'swing');
-         $('.send_button').prop("disabled", false);
+       $('.main-contents__middle').animate({scrollTop: $('.main-contents__middle')[0].scrollHeight}, 'swing');
+       $('.send_button').prop("disabled", false);
 	   })
 	   .fail(function(){
 	   	 alert('error');
 	   })
 	  })
+		function getMsg() {
+    var newMsgId = $('.message').last().attr('msg-id')
+    console.log(newMsgId);
+    var url = $('#new_message').attr('action');
+    $.ajax ({
+      type: 'GET',
+      url: url,
+      data: { msg_id: newMsgId },
+      dataType: 'json'
+    })
+    .done(function(data){
+      if (data.length == 0) return false
+      data.forEach(function(msg) {
+        var html = buildHTML(msg)
+        $('.main-contents__middle__message').append(html)
+      })
+      $('.main-contents__middle').animate({ scrollTop: $('.main-contents__middle')[0].scrollHeight}, 'swing')
+    })
+  }
+  setInterval(getMsg, 5000)
 	})
 })

@@ -2,10 +2,12 @@
 .main-contents
 	.main-contents__top
 		.main-contents__top__info
-			%h1 sampleグループ
+			%h1
+				= @group.name
 			%ul Member:
-			%li Tanaka
-			%li Sato
+			- @users.each do |user|
+				%li
+					= user.name
 		.button.edit_button
 			= link_to "Edit", edit_group_path(params[:group_id])
 	.main-contents__middle
