@@ -36,7 +36,6 @@ $(document).on('turbolinks:load', function(){
 		function getMsg() {
 			var newMsgId = $('.message').last().attr('msg-id');
 			var url = $('#new_message').attr('action');
-			console.log(location.pathname);
 			$.ajax ({
 				type: 'GET',
 				url: url,
