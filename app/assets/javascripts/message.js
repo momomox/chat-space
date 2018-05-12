@@ -43,15 +43,18 @@ $(document).on('turbolinks:load', function(){
         dataType: 'json'
       })
       .done(function(data){
-      if (data.length == 0) return false
-      data.forEach(function(msg) {
-      var html = buildHTML(msg)
-      $('.main-contents__middle__message').append(html)
+        if (data.length == 0) return false
+        data.forEach(function(msg) {
+          var html = buildHTML(msg)
+          $('.main-contents__middle__message').append(html)
+        })
+        $('.main-contents__middle').animate({ scrollTop: $('.main-contents__middle')[0].scrollHeight}, 'swing')
       })
-      $('.main-contents__middle').animate({ scrollTop: $('.main-contents__middle')[0].scrollHeight}, 'swing')
+      .fail(function(data){
+        alert("自動更新に失敗しました");
       })
     }
-    if (location.pathname.match(/messages/)){
+    if (location.pathname.search('messages') != -1){
       setInterval(getMsg, 5000)
     }
   })
